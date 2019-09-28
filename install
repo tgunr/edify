@@ -16,8 +16,17 @@
 #  under the License.
 ##############################################################################
 
+set -x
+if [ -e /usr/local/bin/edify ]; then
+    rm /usr/local/bin/edify
+fi
+ln -s $(pwd)/edify /usr/local/bin/edify
+
 if [ ! -d /usr/local/share/edify ]; then
 	/bin/mkdir -p /usr/local/share/edify
 fi
-/usr/bin/install -m 755 -g admin -o root ./edify /usr/local/bin/
-/usr/bin/install -m 755 -g wheel -o root ./com.github.edify.plist /usr/local/share/edify/
+
+if [ -L /usr/local/share/edify/com.github.edify.plist ]; then
+    rm /usr/local/share/edify/com.github.edify.plist
+fi
+ln -s $(pwd)/com.github.edify.plist /usr/local/share/edify/com.github.edify.plist
