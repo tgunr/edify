@@ -98,6 +98,7 @@ def print_item(k, v):
         print(colored("## %s" % i, "yellow"))
     print(colored("%s\n" % k, "cyan"))
 
+edifyDir = "~/bin/edify"
 
 def main():
     """Main method"""
@@ -112,7 +113,7 @@ def main():
 
     # Instantiate variables
     d = {}
-    master_plist = os.path.join(os.getcwd(), "com.github.edify.plist")
+    master_plist = os.path.expanduser(os.path.join(edifyDir, "com.github.edify.plist"))
     cached_plist = "/usr/local/share/edify/com.github.edify.plist"
     local_plist = os.path.expanduser(
         "~/Library/Application Support/edify/com.github.edify.plist"
