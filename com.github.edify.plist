@@ -630,6 +630,8 @@
 	<string>Turn off guest access to newly-created share.</string>
 	<key>sudo sharing -r /Path/to/foo</key>
 	<string>Turn off sharing entirely for a directory.</string>
+	<key>sudo softwareupdate -al</key>
+	<string>Update system software</string>
 	<key>sudo spctl --master-disable</key>
 	<string>Disable Gatekeeper enforcement globally.</string>
 	<key>sudo tail -40 -f /var/log/system.log</key>
